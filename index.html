@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Manager</title>
+        <link rel = "stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h1>Task Manager</h1>
+        <h2>Add Your Upcoming Tasks and Cross Them off as They are Done!</h2>
+        <div class="body">
+            <form>
+                <input id="task-input" type="text" maxlength ="30" placeholder="Enter a Task Name (Required)" required>
+                <label for="date-input" class="date">Select Date</label>
+                <input id="date-input" type="date" min="" aria-label="Select Date">
+                <textarea id="description-input" maxlength = "30" placeholder="Enter a Description (Max 30 Characters)"></textarea>
+                <button id="add-button">ADD TASK</button>
+            </form>
+            <ul id="task-list"></ul>
+        </div>
+    </body>
+</html>

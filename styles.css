@@ -1,0 +1,188 @@
+:root{
+    --background: #101114;
+    --primary-color: #1C1D20;
+    --secondary-color: #4A4D57;
+    --accent-color: #00bbf0;
+    --text-color: #F9F9F9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+  font-family: 'Segoe UI', Tahoma;
+  font-size: 21.5px;
+  color: var(--text-color);
+}
+
+body{
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+h2{
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--accent-color);
+}
+
+.body{
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#task-input, 
+#date-input,
+#description-input {
+    box-sizing: border-box;
+    padding: 12px 20px;
+    width: 100%;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    font: inherit;
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.date {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    font-weight: 400;
+    border: 0;
+}
+
+.task-description {
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-right: 10px;
+}
+
+#add-button{
+    position: unset;
+    width: 100%;
+    padding: 5px;
+    height: 45px;
+    background-color: var(--accent-color);
+    padding: 0 30px;
+    border: none;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--background);
+    cursor: pointer;
+}
+
+#add-button:hover {
+    background-color: var(--background); 
+    color: var(--accent-color);
+    border: 3px solid var(--accent-color)
+}
+
+.task{
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.task .task-text{
+    padding: 15px;
+    padding-right: 0;
+    flex-grow: 1;
+    transition: 200ms ease;
+}
+
+.delete-button{
+    padding: 3px;
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delete-button:hover svg{
+    fill: #ff0033;
+}
+
+.custom-checkbox{
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 200ms ease;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox{
+    background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox svg{
+    fill: var(--primary-color);
+} 
+
+input[type="checkbox"]:checked ~ .todo-text{
+    text-decoration: line-through;
+    color: var(--secondary-color);
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+@media(max-width: 500px){
+    html{
+        font-size: 12pt;
+    }
+
+    #add-button{
+        position: unset;
+        width: 100%;
+        padding: 15px;
+        height: 7.5vh;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 0.666rem;
+    }
+}
